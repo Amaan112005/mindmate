@@ -3,8 +3,8 @@ python-dotenv==1.0.0
 pymysql==1.1.0
 bcrypt==4.0.1
 cryptography==41.0.3
-pandas==2.0.3
-numpy==1.24.4
+pandas==2.1.3  # Updated version for Python 3.13
+numpy==1.26.0  # Updated version that doesn't require distutils
 plotly==5.15.0
 altair==5.0.1
 streamlit-option-menu==0.3.6
