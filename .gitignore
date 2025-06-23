@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE
+.vscode/
+.idea/
+
+# System
+.DS_Store
+
+# Data files
+*.db
+*.db.bak
+*.tgz
+*.log
+
+# Model files
+/model/
