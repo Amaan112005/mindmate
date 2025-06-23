@@ -4,6 +4,21 @@ port = 8501
 enableCORS = false
 enableXsrfProtection = true
 
+[theme]
+primaryColor = "#4f8cff"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#31333f"
+font = "sans serif"
+
 [browser]
 serverAddress = "localhost"
 gatherUsageStats = false
+
+[runner]
+fastReruns = true
+magicEnabled = true
+
+[client]
+showErrorDetails = true
+caching = true
