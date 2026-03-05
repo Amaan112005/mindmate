@@ -15,6 +15,7 @@ class MockCollection:
     def delete_one(self, *args, **kwargs): return type('obj', (object,), {'deleted_count': 0})
     def count_documents(self, *args, **kwargs): return 0
     def create_index(self, *args, **kwargs): pass
+    def __getitem__(self, key): return MockCollection()
 
 class PyMongoError(Exception): pass
 MongoClient = MockMongoClient

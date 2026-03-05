@@ -52,7 +52,13 @@ def get_mood_trends(user_id: str = "default_user", days: int = 30) -> Dict[str, 
             cursor.execute("""
                 SELECT 
                     date(timestamp) as day,
-                    AVG(mood_score) as avg_mood,
+                    AVG(
+                        CASE 
+                            WHEN mood_score > 1 THEN (mood_score / 5.0) - 1
+                            WHEN mood_score < -1 THEN -1
+                            ELSE mood_score
+                        END
+                    ) as avg_mood,
                     COUNT(*) as entry_count
                 FROM journal_entries
                 WHERE user_id = ? AND date(timestamp) BETWEEN ? AND ?
