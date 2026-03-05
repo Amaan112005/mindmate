@@ -1,4 +1,10 @@
-import sqlite3
+try:
+    import sqlite3
+except ImportError:
+    __import__('pysqlite3')
+    import sys
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+    import sqlite3
 import logging
 from pathlib import Path
 from datetime import datetime
