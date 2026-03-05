@@ -3,15 +3,10 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.db
-mindmate/data/*.db
+# mindmate.db is included intentionally for demo data
 .DS_Store
 *.log
 venv/
 env/
 .venv/
 mindmate.egg-info/
-
-mongodb*.tgz
-model/
-.env
