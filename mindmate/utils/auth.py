@@ -18,12 +18,15 @@ from mindmate.utils.animations import (
     PARTICLE_BG_ANIMATION
 )
 
+from mindmate.utils.database import init_db, get_db_connection as _get_db_connection
+
 # Animation URLs and load function moved to mindmate/utils/animations.py
 
 DB_PATH = Path(__file__).parent.parent / "data" / "mindmate.db"
 
 def get_db_connection():
     """Create and return a database connection"""
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     return sqlite3.connect(DB_PATH)
 
 def hash_password(password: str) -> str:
@@ -58,6 +61,7 @@ def create_user(username: str, email: str, password: str,
 def create_admin_user():
     """Create admin user if not exists"""
     try:
+        init_db()  # Ensure tables exist before querying
         conn = get_db_connection()
         cursor = conn.cursor()
         
