@@ -1,8 +1,23 @@
 from datetime import datetime, time, timedelta
 from typing import Dict, List, Optional
-from pymongo import MongoClient
-from pymongo.errors import PyMongoError
-from bson import ObjectId
+class ObjectId(str):
+    pass# Mock MongoDB since we are using SQLite right now
+class MockMongoClient:
+    def __init__(self, *args, **kwargs): pass
+    def __getitem__(self, key): return MockCollection()
+
+class MockCollection:
+    def find(self, *args, **kwargs): return []
+    def find_one(self, *args, **kwargs): return None
+    def insert_one(self, *args, **kwargs): pass
+    def update_one(self, *args, **kwargs): pass
+    def update_many(self, *args, **kwargs): pass
+    def delete_one(self, *args, **kwargs): return type('obj', (object,), {'deleted_count': 0})
+    def count_documents(self, *args, **kwargs): return 0
+    def create_index(self, *args, **kwargs): pass
+
+class PyMongoError(Exception): pass
+MongoClient = MockMongoClient
 
 def get_collection(collection_name: str):
     """Get MongoDB collection instance"""
