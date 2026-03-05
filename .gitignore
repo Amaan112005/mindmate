@@ -1,54 +1,17 @@
-# Python
+.env
+__pycache__/
 *.pyc
 *.pyo
 *.pyd
-__pycache__/
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Logs and databases
-*.log
-*.sqlite
 *.db
-
-# Environment files
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# IDE specific
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# System files
+mindmate/data/*.db
 .DS_Store
-Thumbs.db
+*.log
+venv/
+env/
+.venv/
+mindmate.egg-info/
 
-# Large files
-*.tgz
-*.zip
-*.gz
-
-# Model files
-/model/
+mongodb*.tgz
+model/
+.env

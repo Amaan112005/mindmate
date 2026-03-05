@@ -6,6 +6,7 @@ LOGIN_ANIMATION = "https://assets9.lottiefiles.com/packages/lf20_hu9cd9.json"  #
 LOADING_ANIMATION = "https://assets9.lottiefiles.com/packages/lf20_ra6kpuq6.json"  # Smooth loading spinner
 SIGNUP_ANIMATION = "https://assets9.lottiefiles.com/packages/lf20_gn0y3jxk.json"  # Professional signup flow
 PARTICLE_BG_ANIMATION = "https://assets9.lottiefiles.com/packages/lf20_ibtwig3i.json"  # Subtle particle effect
+COMING_SOON_ANIMATION = "https://assets9.lottiefiles.com/packages/lf20_t24tpvcu.json"  # Default coming soon animation
 
 def load_lottie_animation(url: str):
     """Load Lottie animation from URL"""

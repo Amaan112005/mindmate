@@ -5,7 +5,7 @@ def test_key(api_key):
         client = Groq(api_key=api_key)
         response = client.chat.completions.create(
             messages=[{"role": "user", "content": "Hello"}],
-            model="llama3-8b-8192"  # Current recommended model
+            model="llama-3.1-8b-instant"  # Current recommended model
         )
         print("Key works! Response:", response.choices[0].message.content)
         return True
@@ -13,4 +13,9 @@ def test_key(api_key):
         print("Key verification failed:", str(e))
         return False
 
-test_key("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")
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+test_key(os.getenv("GROQ_API_KEY", ""))

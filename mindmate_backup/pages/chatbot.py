@@ -1,8 +1,9 @@
 import streamlit as st
 from groq import Groq
+import os
 
 # Initialize Groq client
-client = Groq(api_key="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")
+client = Groq(api_key=os.getenv("GROQ_API_KEY", ""))
 
 # System prompt defining mental health assistant role
 SYSTEM_PROMPT = """You are MindMate, an empathetic and supportive mental health companion. Your role is to:
@@ -86,7 +87,7 @@ def show_chatbot_page():
         # Get AI response with full conversation history
         try:
             response = client.chat.completions.create(
-                model="llama3-8b-8192",
+                model="llama-3.1-8b-instant",
                 messages=st.session_state.messages,
                 temperature=0.7
             )
